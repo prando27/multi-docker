@@ -14,7 +14,7 @@ after_success:
   - docker build -t prando27/multi-server ./server
   - docker build -t prando27/multi-worker ./worker
   # Log in to the docker CLI
-  echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push prando27/multi-client
   - docker push prando27/multi-nginx
